@@ -1,24 +1,23 @@
-# Example project for deploying Tomcat on Heroku
-This is an example setup to run Tomcat on Heroku. Now it uses the webapp-runner from jsimone.
+# heroku-db-view
+db-view for heroku
 
-# Running it local
-```mvn clean install```
+# access 
+https://db-view.herokuapp.com/
 
-```java -jar target/dependency/webapp-runner.jar target/*.war```
+# databases
 
-# Running within Eclipse
-https://github.com/jsimone/webapp-runner
+## postgresql-heroku
+world.sql had imported.
+try sql like...
 
-# Deploying 
+select * from city
 
-1. Checkout this project
-2. Add it to Heroku ```heroku create --stack cedar```
-3. Rename your project to whatever name you want, in this example we will use tomcat-tst ```heroku rename tomcat-tst```
-4. Add the Heroku as a remote ```git remote add heroku git@heroku.com:tomcat-tst.git```
-5. Push it: ```git push heroku master```
-6. Access your application: http://tomcat-tst.herokuapp.com/
+## mysql-heroku
+world.sql had imported.
+try sql like...
 
-# TODO
-* Adding servlet with right expire header
-* Add explanation of setup
-* Add gzip for java pages through servlet.xml
+select * from city
+
+## mysql-information_schema
+
+mysql management database
