@@ -4,7 +4,7 @@ import java.util.List;
 
 public class QueryBean {
 
-	private static final String[] DML_KEYWORD = {"SELECT","SHOW"};
+	private static final String DML_KEYWORD = "SELECT";
 	private String event = "";
 	private String driver = "";
 	private String url = "";
@@ -78,10 +78,8 @@ public class QueryBean {
 	}
 	public void setQuery(String query) {
 		this.query = query;
-		for (String s : DML_KEYWORD) {
-			if(!query.trim().toUpperCase().startsWith(s)){
-				dml = false;
-			}
+		if(!query.trim().toUpperCase().startsWith(DML_KEYWORD)){
+			dml = false;
 		}
 	}
 	public boolean isDml() {
