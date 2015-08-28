@@ -1,23 +1,77 @@
 # heroku-db-view
 db-view for heroku
 
-# access 
+# access
 https://db-view.herokuapp.com/
 
-# databases
+# databases presetting
+
+modify presets array described in index.html
+
+# preseted database
 
 ## postgresql-heroku
 world.sql had imported.
-try sql like...
+world database has 3 tables as city,country and countrylanguage
 
-select * from city
+so try sql like...
+
+* select * from city
+* select * from country
+* select * from countrylanguage
+
+you can also inspect database like
+
+* select * from information_schema.tables
+* select * from information_schema.columns
+
 
 ## mysql-heroku
-world.sql had imported.
-try sql like...
+* world.sql had imported.
 
-select * from city
+try same sql as postgresql
 
-## mysql-information_schema
+## MySQL information_schema
 
-mysql management database
+You can inspect management databases of MySQL below
+
+* CHARACTER_SETS
+* COLLATIONS
+* COLLATION_CHARACTER_SET_APPLICABILITY
+* COLUMNS
+* COLUMN_PRIVILEGES
+* ENGINES
+* EVENTS
+* FILES
+* GLOBAL_STATUS
+* GLOBAL_VARIABLES
+* KEY_COLUMN_USAGE
+* PARAMETERS
+* PARTITIONS
+* PLUGINS
+* PROCESSLIST
+* PROFILING
+* REFERENTIAL_CONSTRAINTS
+* ROUTINES
+* SCHEMATA
+* SCHEMA_PRIVILEGES
+* SESSION_STATUS
+* SESSION_VARIABLES
+* STATISTICS
+* TABLES
+* TABLESPACES
+* TABLE_CONSTRAINTS
+* TABLE_PRIVILEGES
+* TRIGGERS
+* USER_PRIVILEGES
+* VIEWS
+* INNODB_BUFFER_PAGE
+* INNODB_TRX
+* INNODB_BUFFER_POOL_STATS
+* INNODB_LOCK_WAITS
+* INNODB_CMPMEM
+* INNODB_CMP
+* INNODB_LOCKS
+* INNODB_CMPMEM_RESET
+* INNODB_CMP_RESET
+* INNODB_BUFFER_PAGE_LRU

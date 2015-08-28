@@ -4,7 +4,7 @@ import java.util.List;
 
 public class QueryBean {
 
-	private static final String[] DML_KEYWORD = {"SELECT","SHOW"};
+	private static final String[] NOT_DML_KEYWORD = {"SELECT","SHOW"};
 	private String event = "";
 	private String driver = "";
 	private String url = "";
@@ -23,7 +23,7 @@ public class QueryBean {
 	public void setEvent(String event) {
 		this.event = event;
 	}
-	
+
 	public String[] getColumns() {
 		return columns;
 	}
@@ -48,7 +48,7 @@ public class QueryBean {
 	public void setSucces(boolean succes) {
 		this.succes = succes;
 	}
-	
+
 	public String getDriver() {
 		return driver;
 	}
@@ -78,9 +78,10 @@ public class QueryBean {
 	}
 	public void setQuery(String query) {
 		this.query = query;
-		for (String s : DML_KEYWORD) {
-			if(!query.trim().toUpperCase().startsWith(s)){
+		for (String s : NOT_DML_KEYWORD) {
+			if(query.trim().toUpperCase().startsWith(s)){
 				dml = false;
+				return;
 			}
 		}
 	}
@@ -90,7 +91,7 @@ public class QueryBean {
 	public void setDml(boolean dml) {
 		this.dml = dml;
 	}
-	
-	
-	
+
+
+
 }

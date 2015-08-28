@@ -6,12 +6,18 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Properties;
 public class SQLManager {
 
 	public Connection getConnection(String driver, String url, String user, String password) throws SQLException, ClassNotFoundException{
+		
+		Properties props = new Properties();
+		props.setProperty("user",user);
+		props.setProperty("password",password);
+		props.setProperty("ssl","true");
+		
 		Class.forName(driver);
-		return DriverManager.getConnection(url, user, password);
+		return DriverManager.getConnection(url, props);
 	}
 
 	
@@ -36,14 +42,14 @@ public class SQLManager {
 	public void doExecute(QueryBean bean) {
 		
 		if (bean.isDml()) {
-			execute(bean);
-		} else {
 			executeUpdate(bean);
+		} else {
+			executeQuery(bean);
 		}
 	
 	}
 
-	private void execute(QueryBean bean) {
+	private void executeUpdate(QueryBean bean) {
 
 		SQL sql = null;
 		try {
@@ -65,7 +71,7 @@ public class SQLManager {
 	}
 
 	
-	private void executeUpdate(QueryBean bean) {
+	private void executeQuery(QueryBean bean) {
 
 		SQL sql = null;
 		try {

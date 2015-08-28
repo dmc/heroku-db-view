@@ -5,11 +5,11 @@
 <%@page import="com.service.dmc.sql.QueryBean"%>
 <%@page import="com.service.dmc.util.CssFileFilter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<% 	
-	QueryBean bean = (QueryBean) request.getAttribute("bean"); 
+<%
+	QueryBean bean = (QueryBean) request.getAttribute("bean");
 	if(bean == null) {bean = new QueryBean();}
 %>
-   
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,21 +21,22 @@
 
 <script language="JavaScript" type="text/javascript">
 
-var presets = [ 
-["","","","",""], 
-["postgres-heroku","org.postgresql.Driver","jdbc:postgresql://ec2-54-83-205-164.compute-1.amazonaws.com:5432/d9v6d5uqacptit","kyuljdoqfyziks","x9LvzxTGy8izs-7NFY30VDhqT0"], 
+var presets = [
+["","","","",""],
+["postgres-heroku","org.postgresql.Driver","jdbc:postgresql://ec2-174-129-254-216.compute-1.amazonaws.com:5432/da3a0k5tua6qv2","rzcfpiirtceqhp","666d25672e8323637b344bbecaf30d6594651788340cf58f9d2fb96e458a4f94"],
 ["mysql-heroku","com.mysql.jdbc.Driver","jdbc:mysql://us-cdbr-iron-east-02.cleardb.net:3306/heroku_126abff0eac31c8","bf05d3bb2265c3","fc67f770"],
 ["mysql-heroku-information_schema","com.mysql.jdbc.Driver","jdbc:mysql://us-cdbr-iron-east-02.cleardb.net:3306/information_schema","bf05d3bb2265c3","fc67f770"],
-["postgres-template","org.postgresql.Driver","jdbc:postgresql://localhost/db","user","password"], 
+["postgres-template","org.postgresql.Driver","jdbc:postgresql://localhost/db","user","password"],
 ["mysql-template","com.mysql.jdbc.Driver","jdbc:mysql://localhost/mysql","user","password"],
 ["oracle-template","oracle.jdbc.driver.OracleDriver","jdbc:oracle:thin:@host:port:db","user","password"]
- ]; 
+ ];
 
-var csspresets =  
+var csspresets =
 ["default.css",
- "black.css",
- "orange.css",
- "dark.css"]; 
+ "light.css",
+ "dark.css",
+ "terminal.css"
+];
 
 
 jQuery(function ($) {
@@ -48,31 +49,31 @@ jQuery(function ($) {
 		var $option = $('<option>').html(csspresets[i]).val(csspresets[i]).attr('id',csspresets[i]);
 		$("#css-list").append($('<option>').html(csspresets[i]).val(csspresets[i]));
 	}
-	
-	
+
+
 
 	$("#query-buttons").hide();
 
 	$('#login').click(function() {
 
     	$("input[type='button']").prop("disabled",true);
-	
+
     	$.ajax({
     		  url: "<%=application.getContextPath()%>/action",
     		  type: "post",
     		  data: {event: "login",driver: $('#driver').val(),url: $('#url').val(),user: $('#user').val(),password: $('#password').val()}
     		  }).done(function(data) {
-            	$('#query-box').html(data);	
+            	$('#query-box').html(data);
     			if ($(data).filter('#error').size()){
-    				$('#query-box').html(data);	
+    				$('#query-box').html(data);
               	} else {
                     $("#login-parameter").hide();
                   	$("#query-buttons").show();
-              	} 
+              	}
               }).always(function() {
   		    	$("input[type='button']").prop("disabled",false);
 	  		  });
-    	
+
        });
 
     $('#execute').click(function() {
@@ -85,7 +86,7 @@ jQuery(function ($) {
     		  data: {event: "execute",driver: $('#driver').val(),url: $('#url').val(),user: $('#user').val(),password: $('#password').val(),query: $('#sql').val(),}
 		  }).done(function(data) {
 				$('#result').html(data);
-    		
+
 		  }).always(function() {
 		    	$("input[type='button']").prop("disabled",false);
 	  	});
@@ -102,7 +103,7 @@ jQuery(function ($) {
   				$('#dialog').dialog();
   			}else {
   	  			$('#dialog').dialog({width: 500});
-  			}    
+  			}
   		});
 	});
 
@@ -154,10 +155,10 @@ function changeTheme() {
 <div id="header">
 <table cellpadding="" class="header">
 <tr>
-<td align="left"><h1>db-view 3.0</h1></td>
+<td align="left"><h1>db-view 3.1</h1></td>
 </tr>
 <tr>
-<td align="right">buid on 9th June 2015.<br>developed by dmc system service.</td>
+<td align="right">buid on 22nd Mar 2017.<br>developed by dmc system service.</td>
 </tr>
 </table>
 <hr/>
