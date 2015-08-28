@@ -36,9 +36,9 @@ public class SQLManager {
 	public void doExecute(QueryBean bean) {
 		
 		if (bean.isDml()) {
-			executeQuery(bean);
-		} else {
 			executeUpdate(bean);
+		} else {
+			executeQuery(bean);
 		}
 	
 	}
