@@ -36,14 +36,14 @@ public class SQLManager {
 	public void doExecute(QueryBean bean) {
 		
 		if (bean.isDml()) {
-			execute(bean);
+			executeQuery(bean);
 		} else {
 			executeUpdate(bean);
 		}
 	
 	}
 
-	private void execute(QueryBean bean) {
+	private void executeUpdate(QueryBean bean) {
 
 		SQL sql = null;
 		try {
@@ -65,7 +65,7 @@ public class SQLManager {
 	}
 
 	
-	private void executeUpdate(QueryBean bean) {
+	private void executeQuery(QueryBean bean) {
 
 		SQL sql = null;
 		try {
