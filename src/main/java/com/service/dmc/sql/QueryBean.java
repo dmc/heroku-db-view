@@ -79,7 +79,7 @@ public class QueryBean {
 	public void setQuery(String query) {
 		this.query = query;
 		for (String s : NOT_DML_KEYWORD) {
-			if(query.trim().toUpperCase().startsWith(NOT_DML_KEYWORD)){
+			if(query.trim().toUpperCase().startsWith(s)){
 				dml = false;
 				return;
 			}
