@@ -36,7 +36,6 @@ var csspresets =
  "black.css",
  "orange.css",
  "dark.css",
- "blox.css",
  "bttf.css",
  "atari.css",
  "blox.css",
