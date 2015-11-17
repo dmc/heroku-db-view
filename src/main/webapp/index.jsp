@@ -16,8 +16,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" language="javascript" src="<%= application.getContextPath() %>/javascript/jquery.js"></script>
 <script type="text/javascript" language="javascript" src="<%= application.getContextPath() %>/javascript/jquery-ui.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700'
-	rel='stylesheet' type='text/css'>
 <link id="theme" rel="stylesheet" href="<%= application.getContextPath() %>/css/default.css">
 
 
@@ -35,10 +33,14 @@ var presets = [
 
 var csspresets =
 ["default.css",
- "blox.css",
  "black.css",
  "orange.css",
- "dark.css"];
+ "dark.css",
+ "blox.css",
+ "bttf.css",
+ "atari.css",
+ "blox.css",
+ "creep.css"];
 
 
 jQuery(function ($) {
