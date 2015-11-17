@@ -35,6 +35,7 @@ var presets = [
 
 var csspresets =
 ["default.css",
+ "blox.css",
  "black.css",
  "orange.css",
  "dark.css"];
