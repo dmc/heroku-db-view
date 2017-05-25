@@ -158,10 +158,10 @@ function changeTheme() {
 <div id="header">
 <table cellpadding="" class="header">
 <tr>
-<td align="left"><h1>db-view 3.0</h1></td>
+<td align="left"><h1>db-view 3.1</h1></td>
 </tr>
 <tr>
-<td align="right">buid on 9th June 2015.<br>developed by dmc system service.</td>
+<td align="right">buid on 25th May 2017.<br>developed by Haruna Lady.</td>
 </tr>
 </table>
 <hr/>
