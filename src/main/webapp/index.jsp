@@ -161,7 +161,7 @@ function changeTheme() {
 <td align="left"><h1>db-view 3.1</h1></td>
 </tr>
 <tr>
-<td align="right">buid on 25th May 2017.<br>developed by Haruna Lady.</td>
+<td align="right">buid on 4th Aug 2017.<br>developed by atWare</td>
 </tr>
 </table>
 <hr/>
