@@ -16,18 +16,18 @@ world database has 3 tables as city,country and countrylanguage
 
 so try sql like...
 
-select * from city
-select * from country
-select * from countrylanguage
+* select * from city
+* select * from country
+* select * from countrylanguage
 
 you can also inspect database like
 
-select * from information_schema.tables
-select * from information_schema.columns
+* select * from information_schema.tables
+* select * from information_schema.columns
 
 
 ## mysql-heroku
-world.sql had imported.
+* world.sql had imported.
 
 try same sql as postgresql
 
