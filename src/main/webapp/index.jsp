@@ -23,7 +23,7 @@
 
 var presets = [
 ["","","","",""],
-["postgres-heroku","org.postgresql.Driver","jdbc:postgresql://ec2-54-83-205-164.compute-1.amazonaws.com:5432/d9v6d5uqacptit","kyuljdoqfyziks","x9LvzxTGy8izs-7NFY30VDhqT0"],
+["postgres-heroku","org.postgresql.Driver","jdbc:postgresql://ec2-174-129-254-216.compute-1.amazonaws.com:5432/da3a0k5tua6qv2","rzcfpiirtceqhp","666d25672e8323637b344bbecaf30d6594651788340cf58f9d2fb96e458a4f94"],
 ["mysql-heroku","com.mysql.jdbc.Driver","jdbc:mysql://us-cdbr-iron-east-02.cleardb.net:3306/heroku_126abff0eac31c8","bf05d3bb2265c3","fc67f770"],
 ["mysql-heroku-information_schema","com.mysql.jdbc.Driver","jdbc:mysql://us-cdbr-iron-east-02.cleardb.net:3306/information_schema","bf05d3bb2265c3","fc67f770"],
 ["postgres-template","org.postgresql.Driver","jdbc:postgresql://localhost/db","user","password"],
