@@ -1,7 +1,0 @@
-com/service/dmc/servlet/DbvServlet.class
-com/service/dmc/sql/QueryBean.class
-com/service/dmc/util/CssFileFilter.class
-com/service/dmc/sql/SQLManager.class
-com/service/dmc/servlet/DbvServletContextListener.class
-com/service/dmc/util/ClassInspector.class
-com/service/dmc/sql/SQL.class
