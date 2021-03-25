@@ -11,7 +11,11 @@ public class SQLManager {
 
 	public Connection getConnection(String driver, String url, String user, String password) throws SQLException, ClassNotFoundException{
 		Class.forName(driver);
-		return DriverManager.getConnection(url, user, password);
+		Properties props = new Properties();
+		props.setProperty("user",user);
+		props.setProperty("password",password);
+		props.setProperty("ssl","true");
+		return DriverManager.getConnection(url, props);
 	}
 
 	
