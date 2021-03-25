@@ -17,7 +17,7 @@ pom.xml.versionsBackup
 
 # VS Code
 .vscode
-*.properties
+#*.properties
 
 # heroku
 target/
