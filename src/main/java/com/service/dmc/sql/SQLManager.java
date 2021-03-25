@@ -6,15 +6,17 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Properties;
 public class SQLManager {
 
 	public Connection getConnection(String driver, String url, String user, String password) throws SQLException, ClassNotFoundException{
-		Class.forName(driver);
+		
 		Properties props = new Properties();
 		props.setProperty("user",user);
 		props.setProperty("password",password);
 		props.setProperty("ssl","true");
+		
+		Class.forName(driver);
 		return DriverManager.getConnection(url, props);
 	}
 
