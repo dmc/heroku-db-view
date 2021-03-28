@@ -33,9 +33,8 @@ var presets = [
 
 var csspresets =
 ["default.css",
- "black.css",
+"dark.css",
  "orange.css",
- "dark.css",
  "bttf.css",
  "atari.css",
  "blox.css",
