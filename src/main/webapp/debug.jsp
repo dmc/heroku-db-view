@@ -3,18 +3,19 @@
 <%@page import="java.util.Map"%>
 <%@page import="com.service.dmc.util.ClassInspector"%>
 <%@page import="java.util.List"%>
-<%@page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% 
-    ClassInspector inspector = new ClassInspector();
-    Map<String, String> requestPrameters = inspector.inspect(request);
-    Map<String, String> responsePrameters = inspector.inspect(response);
-    Map<String, String> sessionPrameters = inspector.inspect(session);
-    Map<String, String> contextParameters = inspector.inspect(application);
-    Map<String, String> configParameters = inspector.inspect(config);
+	ClassInspector inspector = new ClassInspector();
+	Map<String, String> requestPrameters = inspector.inspect(request);
+	Map<String, String> responsePrameters = inspector.inspect(response);
+	Map<String, String> sessionPrameters = inspector.inspect(session);
+	Map<String, String> contextParameters = inspector.inspect(application);
+	Map<String, String> configParameters = inspector.inspect(config);
 	
-    Set<String> keys = null;
-    Set<Object> systemKeys = null;
+	Set<String> keys = null;
+	Set<Object> systemKeys = null;
+	
 %>
    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -33,7 +34,7 @@
 <% 
 systemKeys = System.getProperties().keySet();
 for (Object key : systemKeys) {
-    out.write("<tr><td>"+ key + "</td><td>" + System.getProperties().getProperty((String)key) + "</td></tr>");
+	out.write("<tr><td>"+ key + "</td><td>" + System.getProperties().getProperty((String)key) + "</td></tr>");
 }
 %>
 </table>
@@ -43,7 +44,7 @@ for (Object key : systemKeys) {
 <% 
 keys = requestPrameters.keySet();
 for (String key : keys) {
-    out.write("<tr><td>"+ key + "</td><td>" + requestPrameters.get(key) + "</td></tr>");
+	out.write("<tr><td>"+ key + "</td><td>" + requestPrameters.get(key) + "</td></tr>");
 }
 %>
 </table>
@@ -53,7 +54,7 @@ for (String key : keys) {
 <% 
 keys = responsePrameters.keySet();
 for (String key : keys) {
-    out.write("<tr><td>"+ key + "</td><td>" + responsePrameters.get(key) + "</td></tr>");
+	out.write("<tr><td>"+ key + "</td><td>" + responsePrameters.get(key) + "</td></tr>");
 }
 %>
 </table>
@@ -63,7 +64,7 @@ for (String key : keys) {
 <% 
 keys = contextParameters.keySet();
 for (String key : keys) {
-    out.write("<tr><td>"+ key + "</td><td>" + contextParameters.get(key) + "</td></tr>");
+	out.write("<tr><td>"+ key + "</td><td>" + contextParameters.get(key) + "</td></tr>");
 }
 %>
 </table>
@@ -73,7 +74,7 @@ for (String key : keys) {
 <% 
 keys = configParameters.keySet();
 for (String key : keys) {
-    out.write("<tr><td>"+ key + "</td><td>" + configParameters.get(key) + "</td></tr>");
+	out.write("<tr><td>"+ key + "</td><td>" + configParameters.get(key) + "</td></tr>");
 }
 %>
 </table>

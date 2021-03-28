@@ -4,10 +4,10 @@
 <%@page import="java.util.List"%>
 <%@page import="com.service.dmc.sql.QueryBean"%>
 <%@page import="com.service.dmc.util.CssFileFilter"%>
-<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-    ueryBean bean = (QueryBean) request.getAttribute("bean");
-    if(bean == null) {bean = new QueryBean();}
+	QueryBean bean = (QueryBean) request.getAttribute("bean");
+	if(bean == null) {bean = new QueryBean();}
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -35,7 +35,6 @@ var csspresets =
 ["default.css",
  "dark.css",
  "terminal.css",
- "orange.css",
  "bttf.css",
  "atari.css"
 ];
@@ -43,95 +42,95 @@ var csspresets =
 
 jQuery(function ($) {
 
-    for (var i = 0; i < presets.length; i++) {
-        $("#preset").append($('<option>').html(presets[i][0]).val(i));
-    }
+	for (var i = 0; i < presets.length; i++) {
+		$("#preset").append($('<option>').html(presets[i][0]).val(i));
+	}
 
-    for (var i = 0; i < csspresets.length; i++) {
-        var $option = $('<option>').html(csspresets[i]).val(csspresets[i]).attr('id',csspresets[i]);
-        $("#css-list").append($('<option>').html(csspresets[i]).val(csspresets[i]));
-    }
+	for (var i = 0; i < csspresets.length; i++) {
+		var $option = $('<option>').html(csspresets[i]).val(csspresets[i]).attr('id',csspresets[i]);
+		$("#css-list").append($('<option>').html(csspresets[i]).val(csspresets[i]));
+	}
 
 
 
-    $("#query-buttons").hide();
+	$("#query-buttons").hide();
 
-    $('#login').click(function() {
+	$('#login').click(function() {
 
-        $("input[type='button']").prop("disabled",true);
+    	$("input[type='button']").prop("disabled",true);
 
-        $.ajax({
-              url: "<%=application.getContextPath()%>/action",
-              type: "post",
-              data: {event: "login",driver: $('#driver').val(),url: $('#url').val(),user: $('#user').val(),password: $('#password').val()}
-              }).done(function(data) {
-                $('#query-box').html(data);
-                if ($(data).filter('#error').size()){
-                    $('#query-box').html(data);
-                  } else {
+    	$.ajax({
+    		  url: "<%=application.getContextPath()%>/action",
+    		  type: "post",
+    		  data: {event: "login",driver: $('#driver').val(),url: $('#url').val(),user: $('#user').val(),password: $('#password').val()}
+    		  }).done(function(data) {
+            	$('#query-box').html(data);
+    			if ($(data).filter('#error').size()){
+    				$('#query-box').html(data);
+              	} else {
                     $("#login-parameter").hide();
-                      $("#query-buttons").show();
-                  }
+                  	$("#query-buttons").show();
+              	}
               }).always(function() {
-                  $("input[type='button']").prop("disabled",false);
-                });
+  		    	$("input[type='button']").prop("disabled",false);
+	  		  });
 
        });
 
     $('#execute').click(function() {
 
-        $("input[type='button']").prop("disabled",true);
+    	$("input[type='button']").prop("disabled",true);
 
-        $.ajax({
-              url: "<%= application.getContextPath() %>/action",
-              type: "post",
-              data: {event: "execute",driver: $('#driver').val(),url: $('#url').val(),user: $('#user').val(),password: $('#password').val(),query: $('#sql').val(),}
-          }).done(function(data) {
-                $('#result').html(data);
+    	$.ajax({
+    		  url: "<%= application.getContextPath() %>/action",
+    		  type: "post",
+    		  data: {event: "execute",driver: $('#driver').val(),url: $('#url').val(),user: $('#user').val(),password: $('#password').val(),query: $('#sql').val(),}
+		  }).done(function(data) {
+				$('#result').html(data);
 
-          }).always(function() {
-                $("input[type='button']").prop("disabled",false);
-          });
+		  }).always(function() {
+		    	$("input[type='button']").prop("disabled",false);
+	  	});
     });
 
-    $('#history').click(function() {
-        $.ajax({
-            url: "<%= application.getContextPath() %>/action",
-            type: "post",
-            data: {event: "history",driver: $('#driver').val(),url: $('#url').val(),user: $('#user').val(),password: $('#password').val(),query: $('#sql').val(),}
-          }).done(function(data) {
-              $('#dialog').html(data);
-              if($('#dialog').dialog("instance")){
-                  $('#dialog').dialog();
-              }else {
-                    $('#dialog').dialog({width: 500});
-              }
-          });
-    });
+	$('#history').click(function() {
+    	$.ajax({
+  		  url: "<%= application.getContextPath() %>/action",
+  		  type: "post",
+  		  data: {event: "history",driver: $('#driver').val(),url: $('#url').val(),user: $('#user').val(),password: $('#password').val(),query: $('#sql').val(),}
+  		}).done(function(data) {
+  			$('#dialog').html(data);
+  			if($('#dialog').dialog("instance")){
+  				$('#dialog').dialog();
+  			}else {
+  	  			$('#dialog').dialog({width: 500});
+  			}
+  		});
+	});
 
-    $('#exit').click(function() {
+	$('#exit').click(function() {
         $("#login-parameter").show();
-          $("#query-buttons").hide();
+      	$("#query-buttons").hide();
         $("#query-box").html("");
-          $("#result").html("");
-        if($('#dialog').dialog("instance")){
-            $("#dialog").html("");
-            $('#dialog').dialog("destroy");
-        }
-    });
+      	$("#result").html("");
+		if($('#dialog').dialog("instance")){
+	        $("#dialog").html("");
+			$('#dialog').dialog("destroy");
+		}
+	});
 
 });
 
 function setParameter() {
-    var value = $('#preset').val();
-    $("#driver").val(presets[value][1]);
-    $("#url").val(presets[value][2]);
-    $("#user").val(presets[value][3]);
-    $("#password").val(presets[value][4]);
+	var value = $('#preset').val();
+	$("#driver").val(presets[value][1]);
+	$("#url").val(presets[value][2]);
+	$("#user").val(presets[value][3]);
+	$("#password").val(presets[value][4]);
 };
 
 function changeTheme() {
-    $('#theme').attr("href","<%= application.getContextPath() %>/css/" + $("#css-list").val());
+	$('#theme').attr("href","<%= application.getContextPath() %>/css/" + $("#css-list").val());
 };
 
 </script>
