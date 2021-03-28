@@ -4,10 +4,10 @@
 <%@page import="java.util.List"%>
 <%@page import="com.service.dmc.sql.QueryBean"%>
 <%@page import="com.service.dmc.util.CssFileFilter"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     ueryBean bean = (QueryBean) request.getAttribute("bean");
-	if(bean == null) {bean = new QueryBean();}
+    if(bean == null) {bean = new QueryBean();}
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
