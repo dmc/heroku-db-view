@@ -6,6 +6,7 @@
 body{
 	font-family: 'Monoton', cursive;font-weight:400;
   color:black;
+  background-color: #000;
 }
 
 label#error{
