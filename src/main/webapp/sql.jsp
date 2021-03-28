@@ -1,6 +1,6 @@
 <%@page import="com.service.dmc.sql.QueryBean"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% QueryBean bean = (QueryBean) request.getAttribute("bean"); %>
 <% if (!bean.isSucces()) {
 	out.print("<label id='error'>" + bean.getMessage() + "</label>");
