@@ -33,12 +33,11 @@ var presets = [
 
 var csspresets =
 ["default.css",
-"dark.css",
- "orange.css",
+ "dark.css",
+ "terminal.css",
  "bttf.css",
- "atari.css",
- "blox.css",
- "creep.css"];
+ "atari.css"
+];
 
 
 jQuery(function ($) {
