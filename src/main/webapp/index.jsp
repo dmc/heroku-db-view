@@ -6,7 +6,7 @@
 <%@page import="com.service.dmc.util.CssFileFilter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	QueryBean bean = (QueryBean) request.getAttribute("bean");
+    ueryBean bean = (QueryBean) request.getAttribute("bean");
 	if(bean == null) {bean = new QueryBean();}
 %>
 
@@ -35,6 +35,7 @@ var csspresets =
 ["default.css",
  "dark.css",
  "terminal.css",
+ "orange.css",
  "bttf.css",
  "atari.css"
 ];
