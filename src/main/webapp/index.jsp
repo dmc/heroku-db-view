@@ -34,9 +34,7 @@ var presets = [
 var csspresets =
 ["default.css",
  "dark.css",
- "terminal.css",
- "bttf.css",
- "atari.css",
+ "terminal.css"
 ];
 
 
