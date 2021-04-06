@@ -1,10 +1,11 @@
 @font-face {
-   font-family: Montserrat;
-   src: url('./font/Montserrat-Bold.ttf') format("truetype");
-}
-
-body{
-	font-family:"Montserrat",sans-serif;font-weight:700;
+	font-family: Monoton;
+	src: url('font/Monoton-Regular.ttf') format("truetype");
+ }
+ 
+ body{
+	font-family: Monoton;
+    font-weight:700;
 	color:navy;
 }
 
