@@ -33,8 +33,8 @@ var presets = [
 
 var csspresets =
 ["default.css",
- "light.css",
  "dark.css",
+ "light.css",
  "terminal.css"
 ];
 
