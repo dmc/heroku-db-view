@@ -158,7 +158,7 @@ function changeTheme() {
 <td align="left"><h1>db-view 3.1</h1></td>
 </tr>
 <tr>
-<td align="right">buid on 22nd Mar 2017.<br>developed by dmc system service.</td>
+<td align="right">buid on 7th Apri 2022.<br>developed with source link.</td>
 </tr>
 </table>
 <hr/>
